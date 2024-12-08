@@ -1,0 +1,119 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\shane\\source\\repos\\MatrixUnitTestsHW\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{731B1DBA-0A9D-4F01-9E15-9CF5D4B10C23}|MatrixUnitTestsHW\\MatrixUnitTestsHW.csproj|c:\\users\\shane\\source\\repos\\matrixunittestshw\\matrixunittestshw\\tests16_transformationmatrices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{731B1DBA-0A9D-4F01-9E15-9CF5D4B10C23}|MatrixUnitTestsHW\\MatrixUnitTestsHW.csproj|solutionrelative:matrixunittestshw\\tests16_transformationmatrices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{731B1DBA-0A9D-4F01-9E15-9CF5D4B10C23}|MatrixUnitTestsHW\\MatrixUnitTestsHW.csproj|C:\\Users\\shane\\source\\repos\\MatrixUnitTestsHW\\matrixunittestshw\\tests15_invertmatricesusingdeterminant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{731B1DBA-0A9D-4F01-9E15-9CF5D4B10C23}|MatrixUnitTestsHW\\MatrixUnitTestsHW.csproj|solutionrelative:matrixunittestshw\\tests15_invertmatricesusingdeterminant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{731B1DBA-0A9D-4F01-9E15-9CF5D4B10C23}|MatrixUnitTestsHW\\MatrixUnitTestsHW.csproj|c:\\users\\shane\\source\\repos\\matrixunittestshw\\matrixunittestshw\\matrixfloat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{731B1DBA-0A9D-4F01-9E15-9CF5D4B10C23}|MatrixUnitTestsHW\\MatrixUnitTestsHW.csproj|solutionrelative:matrixunittestshw\\matrixfloat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{731B1DBA-0A9D-4F01-9E15-9CF5D4B10C23}|MatrixUnitTestsHW\\MatrixUnitTestsHW.csproj|C:\\Users\\shane\\source\\repos\\MatrixUnitTestsHW\\matrixunittestshw\\matrixrowreductionalgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{731B1DBA-0A9D-4F01-9E15-9CF5D4B10C23}|MatrixUnitTestsHW\\MatrixUnitTestsHW.csproj|solutionrelative:matrixunittestshw\\matrixrowreductionalgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{731B1DBA-0A9D-4F01-9E15-9CF5D4B10C23}|MatrixUnitTestsHW\\MatrixUnitTestsHW.csproj|C:\\Users\\shane\\source\\repos\\MatrixUnitTestsHW\\matrixunittestshw\\matrixint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{731B1DBA-0A9D-4F01-9E15-9CF5D4B10C23}|MatrixUnitTestsHW\\MatrixUnitTestsHW.csproj|solutionrelative:matrixunittestshw\\matrixint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{731B1DBA-0A9D-4F01-9E15-9CF5D4B10C23}|MatrixUnitTestsHW\\MatrixUnitTestsHW.csproj|C:\\Users\\shane\\source\\repos\\MatrixUnitTestsHW\\matrixunittestshw\\matrixelementaryoperations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{731B1DBA-0A9D-4F01-9E15-9CF5D4B10C23}|MatrixUnitTestsHW\\MatrixUnitTestsHW.csproj|solutionrelative:matrixunittestshw\\matrixelementaryoperations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Tests16_TransformationMatrices.cs",
+              "DocumentMoniker": "C:\\Users\\shane\\source\\repos\\MatrixUnitTestsHW\\MatrixUnitTestsHW\\Tests16_TransformationMatrices.cs",
+              "RelativeDocumentMoniker": "MatrixUnitTestsHW\\Tests16_TransformationMatrices.cs",
+              "ToolTip": "C:\\Users\\shane\\source\\repos\\MatrixUnitTestsHW\\MatrixUnitTestsHW\\Tests16_TransformationMatrices.cs",
+              "RelativeToolTip": "MatrixUnitTestsHW\\Tests16_TransformationMatrices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T13:54:09.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Tests15_InvertMatricesUsingDeterminant.cs",
+              "DocumentMoniker": "C:\\Users\\shane\\source\\repos\\MatrixUnitTestsHW\\MatrixUnitTestsHW\\Tests15_InvertMatricesUsingDeterminant.cs",
+              "RelativeDocumentMoniker": "MatrixUnitTestsHW\\Tests15_InvertMatricesUsingDeterminant.cs",
+              "ToolTip": "C:\\Users\\shane\\source\\repos\\MatrixUnitTestsHW\\MatrixUnitTestsHW\\Tests15_InvertMatricesUsingDeterminant.cs",
+              "RelativeToolTip": "MatrixUnitTestsHW\\Tests15_InvertMatricesUsingDeterminant.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T13:45:33.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MatrixFloat.cs",
+              "DocumentMoniker": "C:\\Users\\shane\\source\\repos\\MatrixUnitTestsHW\\MatrixUnitTestsHW\\MatrixFloat.cs",
+              "RelativeDocumentMoniker": "MatrixUnitTestsHW\\MatrixFloat.cs",
+              "ToolTip": "C:\\Users\\shane\\source\\repos\\MatrixUnitTestsHW\\MatrixUnitTestsHW\\MatrixFloat.cs",
+              "RelativeToolTip": "MatrixUnitTestsHW\\MatrixFloat.cs",
+              "ViewState": "AgIAADwBAAAAAAAAAAAswEABAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T11:58:58.708Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MatrixRowReductionAlgorithm.cs",
+              "DocumentMoniker": "C:\\Users\\shane\\source\\repos\\MatrixUnitTestsHW\\MatrixUnitTestsHW\\MatrixRowReductionAlgorithm.cs",
+              "RelativeDocumentMoniker": "MatrixUnitTestsHW\\MatrixRowReductionAlgorithm.cs",
+              "ToolTip": "C:\\Users\\shane\\source\\repos\\MatrixUnitTestsHW\\MatrixUnitTestsHW\\MatrixRowReductionAlgorithm.cs",
+              "RelativeToolTip": "MatrixUnitTestsHW\\MatrixRowReductionAlgorithm.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T12:31:58.127Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MatrixInt.cs",
+              "DocumentMoniker": "C:\\Users\\shane\\source\\repos\\MatrixUnitTestsHW\\MatrixUnitTestsHW\\MatrixInt.cs",
+              "RelativeDocumentMoniker": "MatrixUnitTestsHW\\MatrixInt.cs",
+              "ToolTip": "C:\\Users\\shane\\source\\repos\\MatrixUnitTestsHW\\MatrixUnitTestsHW\\MatrixInt.cs",
+              "RelativeToolTip": "MatrixUnitTestsHW\\MatrixInt.cs",
+              "ViewState": "AgIAAMAAAAAAAAAAAAAcwPkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-22T11:19:51.206Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MatrixElementaryOperations.cs",
+              "DocumentMoniker": "C:\\Users\\shane\\source\\repos\\MatrixUnitTestsHW\\MatrixUnitTestsHW\\MatrixElementaryOperations.cs",
+              "RelativeDocumentMoniker": "MatrixUnitTestsHW\\MatrixElementaryOperations.cs",
+              "ToolTip": "C:\\Users\\shane\\source\\repos\\MatrixUnitTestsHW\\MatrixUnitTestsHW\\MatrixElementaryOperations.cs",
+              "RelativeToolTip": "MatrixUnitTestsHW\\MatrixElementaryOperations.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwBwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T13:45:47.446Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
