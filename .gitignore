@@ -30,3 +30,9 @@ MatrixUnitTestsHW/.vs/MatrixUnitTestsHW/v17/
 *.vsidx
 
 MatrixUnitTestsHW/MatrixUnitTestsHW/bin/Debug/
+
+*.dll
+
+*.pdb
+
+*.tmp
