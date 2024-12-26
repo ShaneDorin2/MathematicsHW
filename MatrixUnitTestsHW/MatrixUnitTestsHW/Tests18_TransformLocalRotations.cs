@@ -59,7 +59,6 @@ namespace Maths_Matrices.Tests
         [Test]
         [DefaultFloatingPointTolerance(0.001d)]
         public void TestChangeRotationXAxis()
-        public void TestChangeRotationXAxis()
         {
             //GlobalSettings.DefaultFloatingPointTolerance = 0.001d;
             
