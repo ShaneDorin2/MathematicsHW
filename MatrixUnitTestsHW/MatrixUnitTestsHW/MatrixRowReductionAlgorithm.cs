@@ -17,7 +17,7 @@ namespace Maths_Matrices.Tests
             for (int pos = 0; pos < augMatrix.NbLines; pos++)
             {
                 float holder = OrganizeMatrix(augMatrix, pos);
-                TestContext.WriteLine("holder is {0}.",holder);
+                //TestContext.WriteLine("holder is {0}.",holder);
                 if (holder == 0 && solutionMax.NbColumns >1) throw new MatrixInvertException();
                 if (holder == 0) continue;
 

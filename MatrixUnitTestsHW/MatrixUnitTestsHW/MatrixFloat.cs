@@ -332,5 +332,23 @@ namespace MatrixUnitTestsHW
             public MatrixInvertException(string message, Exception innerException) : base(message, innerException) { }
             protected MatrixInvertException(SerializationInfo info, StreamingContext context) : base(info, context) { }
         }
+
+        // Exercice 16 ---------------------------------------------------------------------------------------- 
+
+        public static Vector4 operator *(MatrixFloat matrix, Vector4 vector)
+        {
+            float[] startArray = new float[4] { vector.X, vector.Y, vector.Z, vector.W};
+            float[] solArray = new float[4] { 0, 0, 0, 0 };
+
+            for (int i = 0; i < matrix.NbLines; i++)
+            {
+                for (int j = 0; j < matrix.NbColumns; j++)
+                {
+                    solArray[i] += matrix[i, j] * startArray[j];
+                }
+            }
+
+            return new Vector4(solArray[0], solArray[1], solArray[2], solArray[3]);
+        }
     }
 }
