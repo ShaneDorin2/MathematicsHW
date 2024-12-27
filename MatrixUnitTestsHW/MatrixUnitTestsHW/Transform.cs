@@ -34,30 +34,55 @@ namespace Maths_Matrices.Tests
 
         public MatrixFloat LocalRotationMatrix
         {
-            get { return GenerateLocalRotationXMatrix(); }
+            get { return GenerateLocalRotationMatrix(); }
         }
 
         public MatrixFloat LocalRotationXMatrix
         {
-            get { return GenerateLocalTranslationMatrix(); }
+            get { return GenerateLocalRotationXMatrix(); }
         }
         public MatrixFloat LocalRotationYMatrix
         {
-            get { return GenerateLocalTranslationMatrix(); }
+            get { return GenerateLocalRotationYMatrix(); }
         }
         public MatrixFloat LocalRotationZMatrix
         {
-            get { return GenerateLocalTranslationMatrix(); }
+            get { return GenerateLocalRotationZMatrix(); }
         }
 
+
+        private MatrixFloat GenerateLocalRotationMatrix()
+        {
+            return GenerateLocalRotationYMatrix() * GenerateLocalRotationXMatrix() * GenerateLocalRotationZMatrix();
+        }
 
         private MatrixFloat GenerateLocalRotationXMatrix()
         {
             MatrixFloat SolMat = MatrixFloat.Identity(4);
-            SolMat[1, 1] = (float)Math.Cos(LocalRotation.X);
-            SolMat[1, 2] = (float)Math.Sin(LocalRotation.X) *-1;
-            SolMat[2, 1] = (float)Math.Sin(LocalRotation.X);
-            SolMat[2, 2] = (float)Math.Cos(LocalRotation.X);
+            SolMat[1, 1] = (float)Math.Cos(LocalRotation.X * Math.PI / 180);
+            SolMat[1, 2] = (float)Math.Sin(LocalRotation.X * Math.PI / 180) *-1;
+            SolMat[2, 1] = (float)Math.Sin(LocalRotation.X * Math.PI / 180);
+            SolMat[2, 2] = (float)Math.Cos(LocalRotation.X * Math.PI / 180);
+            return SolMat;
+        }        
+        
+        private MatrixFloat GenerateLocalRotationYMatrix()
+        {
+            MatrixFloat SolMat = MatrixFloat.Identity(4);
+            SolMat[0, 0] = (float)Math.Cos(LocalRotation.Y * Math.PI / 180);
+            SolMat[0, 2] = (float)Math.Sin(LocalRotation.Y * Math.PI / 180);
+            SolMat[2, 0] = (float)Math.Sin(LocalRotation.Y * Math.PI / 180) *-1;
+            SolMat[2, 2] = (float)Math.Cos(LocalRotation.Y * Math.PI / 180);
+            return SolMat;
+        }        
+        
+        private MatrixFloat GenerateLocalRotationZMatrix()
+        {
+            MatrixFloat SolMat = MatrixFloat.Identity(4);
+            SolMat[0, 0] = (float)Math.Cos(LocalRotation.Z * Math.PI / 180);
+            SolMat[0, 1] = (float)Math.Sin(LocalRotation.Z * Math.PI / 180) *-1;
+            SolMat[1, 0] = (float)Math.Sin(LocalRotation.Z * Math.PI / 180);
+            SolMat[1, 1] = (float)Math.Cos(LocalRotation.Z * Math.PI / 180);
             return SolMat;
         }
     }
