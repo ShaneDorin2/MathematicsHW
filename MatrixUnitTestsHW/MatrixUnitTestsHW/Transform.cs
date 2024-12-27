@@ -50,7 +50,6 @@ namespace Maths_Matrices.Tests
             get { return GenerateLocalRotationZMatrix(); }
         }
 
-
         private MatrixFloat GenerateLocalRotationMatrix()
         {
             return GenerateLocalRotationYMatrix() * GenerateLocalRotationXMatrix() * GenerateLocalRotationZMatrix();
@@ -83,6 +82,21 @@ namespace Maths_Matrices.Tests
             SolMat[0, 1] = (float)Math.Sin(LocalRotation.Z * Math.PI / 180) *-1;
             SolMat[1, 0] = (float)Math.Sin(LocalRotation.Z * Math.PI / 180);
             SolMat[1, 1] = (float)Math.Cos(LocalRotation.Z * Math.PI / 180);
+            return SolMat;
+        }
+
+        // Exercices 19 ----------------------------------------------------------------------------------------
+
+        public Vector3 LocalScale = new Vector3(1f, 1f, 1f);
+
+        public MatrixFloat LocalScaleMatrix { get { return GenerateLocalScaleMatrix(); } }
+
+        private MatrixFloat GenerateLocalScaleMatrix()
+        {
+            MatrixFloat SolMat = MatrixFloat.Identity(4);
+            SolMat[0, 0] = LocalScale.X;
+            SolMat[1, 1] = LocalScale.Y;
+            SolMat[2, 2] = LocalScale.Z;
             return SolMat;
         }
     }
