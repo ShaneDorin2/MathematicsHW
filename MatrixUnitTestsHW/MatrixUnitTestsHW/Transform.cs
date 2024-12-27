@@ -99,5 +99,21 @@ namespace Maths_Matrices.Tests
             SolMat[2, 2] = LocalScale.Z;
             return SolMat;
         }
+
+        // Exercices 20 ----------------------------------------------------------------------------------------
+
+        public MatrixFloat LocalToWorldMatrix { get { return GenerateLocalToWorldMatrix(); } }
+        public MatrixFloat WorldToLocalMatrix { get { return GenerateWorldToLocalMatrix(); } }
+
+        private MatrixFloat GenerateLocalToWorldMatrix()
+        {
+            return GenerateLocalTranslationMatrix() * GenerateLocalRotationMatrix() * GenerateLocalScaleMatrix();
+        }
+
+        private MatrixFloat GenerateWorldToLocalMatrix()
+        {
+            //return GenerateLocalTranslationMatrix().InvertByDeterminant() * GenerateLocalRotationMatrix().InvertByDeterminant() * GenerateLocalScaleMatrix().InvertByDeterminant();
+            return (GenerateLocalTranslationMatrix() * GenerateLocalRotationMatrix() * GenerateLocalScaleMatrix()).InvertByDeterminant();
+        }
     }
 }
