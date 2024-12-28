@@ -1,4 +1,5 @@
 ﻿using MatrixUnitTestsHW;
+using NUnit.Framework;
 using System;
 using System.Numerics;
 
@@ -15,15 +16,15 @@ namespace Maths_Matrices.Tests
 
         public MatrixFloat LocalTranslationMatrix
         {
-            get { return GenerateLocalTranslationMatrix(); }
+            get { return GenerateTranslationMatrix(LocalPosition); }
         }
 
-        private MatrixFloat GenerateLocalTranslationMatrix()
+        private MatrixFloat GenerateTranslationMatrix(Vector3 pos)
         {
             MatrixFloat SolMat = MatrixFloat.Identity(4);
-            SolMat[0, 3] = LocalPosition.X;
-            SolMat[1, 3] = LocalPosition.Y;
-            SolMat[2, 3] = LocalPosition.Z;
+            SolMat[0, 3] = pos.X;
+            SolMat[1, 3] = pos.Y;
+            SolMat[2, 3] = pos.Z;
             return SolMat;
         }
 
@@ -34,54 +35,54 @@ namespace Maths_Matrices.Tests
 
         public MatrixFloat LocalRotationMatrix
         {
-            get { return GenerateLocalRotationMatrix(); }
+            get { return GenerateRotationMatrix(LocalRotation); }
         }
 
         public MatrixFloat LocalRotationXMatrix
         {
-            get { return GenerateLocalRotationXMatrix(); }
+            get { return GenerateRotationXMatrix(LocalRotation); }
         }
         public MatrixFloat LocalRotationYMatrix
         {
-            get { return GenerateLocalRotationYMatrix(); }
+            get { return GenerateRotationYMatrix(LocalRotation); }
         }
         public MatrixFloat LocalRotationZMatrix
         {
-            get { return GenerateLocalRotationZMatrix(); }
+            get { return GenerateRotationZMatrix(LocalRotation); }
         }
 
-        private MatrixFloat GenerateLocalRotationMatrix()
+        private MatrixFloat GenerateRotationMatrix(Vector3 rot)
         {
-            return GenerateLocalRotationYMatrix() * GenerateLocalRotationXMatrix() * GenerateLocalRotationZMatrix();
+            return GenerateRotationYMatrix(rot) * GenerateRotationXMatrix(rot) * GenerateRotationZMatrix(rot);
         }
 
-        private MatrixFloat GenerateLocalRotationXMatrix()
+        private MatrixFloat GenerateRotationXMatrix(Vector3 rot)
         {
             MatrixFloat SolMat = MatrixFloat.Identity(4);
-            SolMat[1, 1] = (float)Math.Cos(LocalRotation.X * Math.PI / 180);
-            SolMat[1, 2] = (float)Math.Sin(LocalRotation.X * Math.PI / 180) *-1;
-            SolMat[2, 1] = (float)Math.Sin(LocalRotation.X * Math.PI / 180);
-            SolMat[2, 2] = (float)Math.Cos(LocalRotation.X * Math.PI / 180);
+            SolMat[1, 1] = (float)Math.Cos(rot.X * Math.PI / 180);
+            SolMat[1, 2] = (float)Math.Sin(rot.X * Math.PI / 180) *-1;
+            SolMat[2, 1] = (float)Math.Sin(rot.X * Math.PI / 180);
+            SolMat[2, 2] = (float)Math.Cos(rot.X * Math.PI / 180);
             return SolMat;
         }        
         
-        private MatrixFloat GenerateLocalRotationYMatrix()
+        private MatrixFloat GenerateRotationYMatrix(Vector3 rot)
         {
             MatrixFloat SolMat = MatrixFloat.Identity(4);
-            SolMat[0, 0] = (float)Math.Cos(LocalRotation.Y * Math.PI / 180);
-            SolMat[0, 2] = (float)Math.Sin(LocalRotation.Y * Math.PI / 180);
-            SolMat[2, 0] = (float)Math.Sin(LocalRotation.Y * Math.PI / 180) *-1;
-            SolMat[2, 2] = (float)Math.Cos(LocalRotation.Y * Math.PI / 180);
+            SolMat[0, 0] = (float)Math.Cos(rot.Y * Math.PI / 180);
+            SolMat[0, 2] = (float)Math.Sin(rot.Y * Math.PI / 180);
+            SolMat[2, 0] = (float)Math.Sin(rot.Y * Math.PI / 180) *-1;
+            SolMat[2, 2] = (float)Math.Cos(rot.Y * Math.PI / 180);
             return SolMat;
         }        
         
-        private MatrixFloat GenerateLocalRotationZMatrix()
+        private MatrixFloat GenerateRotationZMatrix(Vector3 rot)
         {
             MatrixFloat SolMat = MatrixFloat.Identity(4);
-            SolMat[0, 0] = (float)Math.Cos(LocalRotation.Z * Math.PI / 180);
-            SolMat[0, 1] = (float)Math.Sin(LocalRotation.Z * Math.PI / 180) *-1;
-            SolMat[1, 0] = (float)Math.Sin(LocalRotation.Z * Math.PI / 180);
-            SolMat[1, 1] = (float)Math.Cos(LocalRotation.Z * Math.PI / 180);
+            SolMat[0, 0] = (float)Math.Cos(rot.Z * Math.PI / 180);
+            SolMat[0, 1] = (float)Math.Sin(rot.Z * Math.PI / 180) *-1;
+            SolMat[1, 0] = (float)Math.Sin(rot.Z * Math.PI / 180);
+            SolMat[1, 1] = (float)Math.Cos(rot.Z * Math.PI / 180);
             return SolMat;
         }
 
@@ -89,14 +90,14 @@ namespace Maths_Matrices.Tests
 
         public Vector3 LocalScale = new Vector3(1f, 1f, 1f);
 
-        public MatrixFloat LocalScaleMatrix { get { return GenerateLocalScaleMatrix(); } }
+        public MatrixFloat LocalScaleMatrix { get { return GenerateScaleMatrix(LocalScale); } }
 
-        private MatrixFloat GenerateLocalScaleMatrix()
+        private MatrixFloat GenerateScaleMatrix(Vector3 scale)
         {
             MatrixFloat SolMat = MatrixFloat.Identity(4);
-            SolMat[0, 0] = LocalScale.X;
-            SolMat[1, 1] = LocalScale.Y;
-            SolMat[2, 2] = LocalScale.Z;
+            SolMat[0, 0] = scale.X;
+            SolMat[1, 1] = scale.Y;
+            SolMat[2, 2] = scale.Z;
             return SolMat;
         }
 
@@ -107,13 +108,51 @@ namespace Maths_Matrices.Tests
 
         private MatrixFloat GenerateLocalToWorldMatrix()
         {
-            return GenerateLocalTranslationMatrix() * GenerateLocalRotationMatrix() * GenerateLocalScaleMatrix();
+            return GenerateTranslationMatrix(WorldPosition) * GenerateRotationMatrix(WorldRotation) * GenerateScaleMatrix(WorldScale);
         }
 
         private MatrixFloat GenerateWorldToLocalMatrix()
         {
-            //return GenerateLocalTranslationMatrix().InvertByDeterminant() * GenerateLocalRotationMatrix().InvertByDeterminant() * GenerateLocalScaleMatrix().InvertByDeterminant();
-            return (GenerateLocalTranslationMatrix() * GenerateLocalRotationMatrix() * GenerateLocalScaleMatrix()).InvertByDeterminant();
+            return (GenerateTranslationMatrix(LocalPosition) * GenerateRotationMatrix(LocalRotation) * GenerateScaleMatrix(LocalScale)).InvertByDeterminant();
+        }
+
+        // Exercices 21 ----------------------------------------------------------------------------------------
+
+        private Transform Parent;
+        public Vector3 WorldPosition { get 
+            {
+                if (Parent != null) 
+                {
+                    Vector3 solVec = LocalPosition * Parent.WorldScale;
+                    return Parent.WorldPosition + Vector3.Transform(solVec, Quaternion.CreateFromYawPitchRoll(WorldRotation.Y, WorldRotation.X, WorldRotation.Z));
+                    //return Parent.WorldPosition + Vector3.Transform(LocalPosition, Quaternion.CreateFromAxisAngle(Parent.WorldRotation, 0)); 
+                }
+                else return LocalPosition;
+            } 
+        }
+        public Vector3 WorldRotation { get 
+            {
+                if (Parent != null)
+                {
+                    return Parent.WorldRotation + LocalRotation;
+                }
+                else return LocalRotation;
+            } 
+        }
+
+        public Vector3 WorldScale { get
+            {
+                if (Parent != null)
+                {
+                    return Parent.WorldScale * LocalScale;
+                }
+                else return LocalScale;
+            }
+        }
+
+        internal void SetParent(Transform tParent)
+        {
+            Parent = tParent;
         }
     }
 }
