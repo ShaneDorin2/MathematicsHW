@@ -124,7 +124,7 @@ namespace Maths_Matrices.Tests
                 if (Parent != null) 
                 {
                     Vector3 solVec = LocalPosition * Parent.WorldScale;
-                    return Parent.WorldPosition + Vector3.Transform(solVec, Quaternion.CreateFromYawPitchRoll(
+                    return Parent.WorldPosition + Vector3.Transform(solVec, System.Numerics.Quaternion.CreateFromYawPitchRoll(
                         (float)(Parent.WorldRotation.Y * Math.PI / 180),
                         (float)(Parent.WorldRotation.X * Math.PI / 180),
                         (float)(Parent.WorldRotation.Z * Math.PI / 180)));
@@ -136,7 +136,7 @@ namespace Maths_Matrices.Tests
                 if (Parent != null)
                 {
                     Vector3 solVec = value - Parent.WorldPosition;
-                    LocalPosition = Vector3.Transform(solVec, Quaternion.Inverse(Quaternion.CreateFromYawPitchRoll(
+                    LocalPosition = Vector3.Transform(solVec, System.Numerics.Quaternion.Inverse(System.Numerics.Quaternion.CreateFromYawPitchRoll(
                         (float)(Parent.WorldRotation.Y * Math.PI / 180),
                         (float)(Parent.WorldRotation.X * Math.PI / 180),
                         (float)(Parent.WorldRotation.Z * Math.PI / 180))))

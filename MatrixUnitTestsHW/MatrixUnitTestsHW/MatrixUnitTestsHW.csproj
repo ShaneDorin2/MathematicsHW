@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Quaternion.cs" />
     <Compile Include="MatrixElementaryOperations.cs" />
     <Compile Include="MatrixFloat.cs" />
     <Compile Include="MatrixInt.cs" />
@@ -98,10 +99,14 @@
     <Compile Include="Tests20_TransformLocalEverything.cs" />
     <Compile Include="Tests21_TransformSetParentAndCheckWorldPosition.cs" />
     <Compile Include="Tests22_TransformChangeWorldPosition.cs" />
+    <Compile Include="Tests23_NewQuaternions.cs" />
     <Compile Include="Transform.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Maths_Matrices\Tests\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
