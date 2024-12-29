@@ -101,6 +101,7 @@
     <Compile Include="Tests22_TransformChangeWorldPosition.cs" />
     <Compile Include="Tests23_NewQuaternions.cs" />
     <Compile Include="Tests24_QuaternionsAngleAxis.cs" />
+    <Compile Include="Tests25_QuaternionsMultiplication.cs" />
     <Compile Include="Transform.cs" />
   </ItemGroup>
   <ItemGroup>

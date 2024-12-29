@@ -34,5 +34,15 @@ namespace Maths_Matrices.Tests
             System.Numerics.Quaternion solQuat = System.Numerics.Quaternion.CreateFromAxisAngle(normalizedAxis, (float)(angle * Math.PI / 180));
             return new Quaternion(solQuat.X, solQuat.Y, solQuat.Z, solQuat.W);
         }
+
+        // Exercices 24 ----------------------------------------------------------------------------------------
+
+        public static Quaternion operator *(Quaternion left, Quaternion right)
+        {
+            System.Numerics.Quaternion leftQuat = new System.Numerics.Quaternion(left.x, left.y, left.z, left.w);
+            System.Numerics.Quaternion rightQuat = new System.Numerics.Quaternion(right.x, right.y, right.z, right.w);
+            System.Numerics.Quaternion solQuat = leftQuat * rightQuat;
+            return new Quaternion(solQuat.X, solQuat.Y, solQuat.Z, solQuat.W);
+        }
     }
 }
