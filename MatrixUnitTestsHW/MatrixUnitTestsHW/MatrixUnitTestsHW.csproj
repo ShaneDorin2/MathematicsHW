@@ -103,6 +103,7 @@
     <Compile Include="Tests24_QuaternionsAngleAxis.cs" />
     <Compile Include="Tests25_QuaternionsMultiplication.cs" />
     <Compile Include="Tests26_QuaternionsPointRotation.cs" />
+    <Compile Include="Tests27_QuaternionsMatrix.cs" />
     <Compile Include="Transform.cs" />
   </ItemGroup>
   <ItemGroup>

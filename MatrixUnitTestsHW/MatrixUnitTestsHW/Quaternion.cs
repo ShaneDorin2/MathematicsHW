@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MatrixUnitTestsHW;
+using System;
 using System.Numerics;
 
 namespace Maths_Matrices.Tests
@@ -53,6 +54,43 @@ namespace Maths_Matrices.Tests
             System.Numerics.Quaternion rightVecQuat = new System.Numerics.Quaternion(vec, 0);
             System.Numerics.Quaternion solQuat = leftQuat * rightVecQuat * System.Numerics.Quaternion.Inverse(leftQuat);
             return new Vector3(solQuat.X, solQuat.Y, solQuat.Z);
+        }
+
+        // Exercices 27 ----------------------------------------------------------------------------------------
+
+        public MatrixFloat Matrix { get 
+            { 
+                return Quat2RotMatrix(this);
+            } 
+        }
+
+        public static MatrixFloat Quat2RotMatrix(Quaternion quat)
+        {
+            MatrixFloat solMat = MatrixFloat.Identity(4);
+
+            float xx = quat.x * quat.x;
+            float yy = quat.y * quat.y;
+            float zz = quat.z * quat.z;
+            float xy = quat.x * quat.y;
+            float xz = quat.x * quat.z;
+            float yz = quat.y * quat.z;
+            float wx = quat.w * quat.x;
+            float wy = quat.w * quat.y;
+            float wz = quat.w * quat.z;
+
+            solMat[0, 0] = 1 - 2 * (yy + zz);
+            solMat[0, 1] = 2 * (xy - wz);
+            solMat[0, 2] = 2 * (xz + wy);
+
+            solMat[1, 0] = 2 * (xy + wz);
+            solMat[1, 1] = 1 - 2 * (xx + zz);
+            solMat[1, 2] = 2 * (yz - wx);
+
+            solMat[2, 0] = 2 * (xz - wy);
+            solMat[2, 1] = 2 * (yz + wx);
+            solMat[2, 2] = 1 - 2 * (xx + yy);
+
+            return solMat;
         }
     }
 }
