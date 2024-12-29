@@ -35,7 +35,7 @@ namespace Maths_Matrices.Tests
             return new Quaternion(solQuat.X, solQuat.Y, solQuat.Z, solQuat.W);
         }
 
-        // Exercices 24 ----------------------------------------------------------------------------------------
+        // Exercices 25 ----------------------------------------------------------------------------------------
 
         public static Quaternion operator *(Quaternion left, Quaternion right)
         {
@@ -43,6 +43,16 @@ namespace Maths_Matrices.Tests
             System.Numerics.Quaternion rightQuat = new System.Numerics.Quaternion(right.x, right.y, right.z, right.w);
             System.Numerics.Quaternion solQuat = leftQuat * rightQuat;
             return new Quaternion(solQuat.X, solQuat.Y, solQuat.Z, solQuat.W);
+        }
+
+        // Exercices 26 ----------------------------------------------------------------------------------------
+
+        public static Vector3 operator *(Quaternion left, Vector3 vec)
+        {
+            System.Numerics.Quaternion leftQuat = new System.Numerics.Quaternion(left.x, left.y, left.z, left.w);
+            System.Numerics.Quaternion rightVecQuat = new System.Numerics.Quaternion(vec, 0);
+            System.Numerics.Quaternion solQuat = leftQuat * rightVecQuat * System.Numerics.Quaternion.Inverse(leftQuat);
+            return new Vector3(solQuat.X, solQuat.Y, solQuat.Z);
         }
     }
 }
