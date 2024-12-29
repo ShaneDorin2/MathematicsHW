@@ -97,7 +97,7 @@ namespace Maths_Matrices.Tests
         }
 
         [Test]
-        [DefaultFloatingPointTolerance(0.19d)]
+        [DefaultFloatingPointTolerance(0.001d)]
         public void TestParentChangePositionAndRotation()
         {
             //GlobalSettings.DefaultFloatingPointTolerance = 0.001d;

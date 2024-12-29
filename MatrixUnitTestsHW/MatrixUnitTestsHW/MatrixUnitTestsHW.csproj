@@ -97,6 +97,7 @@
     <Compile Include="Tests19_TransformLocalScale.cs" />
     <Compile Include="Tests20_TransformLocalEverything.cs" />
     <Compile Include="Tests21_TransformSetParentAndCheckWorldPosition.cs" />
+    <Compile Include="Tests22_TransformChangeWorldPosition.cs" />
     <Compile Include="Transform.cs" />
   </ItemGroup>
   <ItemGroup>

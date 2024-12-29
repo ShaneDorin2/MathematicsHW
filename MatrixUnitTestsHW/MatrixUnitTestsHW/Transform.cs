@@ -116,7 +116,7 @@ namespace Maths_Matrices.Tests
             return (GenerateTranslationMatrix(LocalPosition) * GenerateRotationMatrix(LocalRotation) * GenerateScaleMatrix(LocalScale)).InvertByDeterminant();
         }
 
-        // Exercices 21 ----------------------------------------------------------------------------------------
+        // Exercices 21, 22 ----------------------------------------------------------------------------------------
 
         private Transform Parent;
         public Vector3 WorldPosition { get 
@@ -124,11 +124,26 @@ namespace Maths_Matrices.Tests
                 if (Parent != null) 
                 {
                     Vector3 solVec = LocalPosition * Parent.WorldScale;
-                    return Parent.WorldPosition + Vector3.Transform(solVec, Quaternion.CreateFromYawPitchRoll(WorldRotation.Y, WorldRotation.X, WorldRotation.Z));
-                    //return Parent.WorldPosition + Vector3.Transform(LocalPosition, Quaternion.CreateFromAxisAngle(Parent.WorldRotation, 0)); 
+                    return Parent.WorldPosition + Vector3.Transform(solVec, Quaternion.CreateFromYawPitchRoll(
+                        (float)(Parent.WorldRotation.Y * Math.PI / 180),
+                        (float)(Parent.WorldRotation.X * Math.PI / 180),
+                        (float)(Parent.WorldRotation.Z * Math.PI / 180)));
                 }
                 else return LocalPosition;
-            } 
+            }
+            set
+            {
+                if (Parent != null)
+                {
+                    Vector3 solVec = value - Parent.WorldPosition;
+                    LocalPosition = Vector3.Transform(solVec, Quaternion.Inverse(Quaternion.CreateFromYawPitchRoll(
+                        (float)(Parent.WorldRotation.Y * Math.PI / 180),
+                        (float)(Parent.WorldRotation.X * Math.PI / 180),
+                        (float)(Parent.WorldRotation.Z * Math.PI / 180))))
+                        / Parent.WorldScale;
+                }
+                else LocalPosition = value;
+            }
         }
         public Vector3 WorldRotation { get 
             {
