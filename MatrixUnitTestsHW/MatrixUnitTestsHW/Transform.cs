@@ -182,6 +182,10 @@ namespace Maths_Matrices.Tests
                     );
                 return new Quaternion(solQuat.X, solQuat.Y, solQuat.Z, solQuat.W);
             }
+            set
+            {
+                this.LocalRotation = value.EulerAngles;
+            }
         }
     }
 }

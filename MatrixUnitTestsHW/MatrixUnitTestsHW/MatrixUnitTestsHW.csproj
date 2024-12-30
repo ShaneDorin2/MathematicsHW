@@ -106,6 +106,7 @@
     <Compile Include="Tests27_QuaternionsMatrix.cs" />
     <Compile Include="Tests28_QuaternionsEulerConversions.cs" />
     <Compile Include="Tests29_TransformGetLocalRotationAsQuaternion.cs" />
+    <Compile Include="Tests30_TransformSetLocalRotationAsQuaternion.cs" />
     <Compile Include="Transform.cs" />
   </ItemGroup>
   <ItemGroup>
