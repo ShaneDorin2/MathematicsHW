@@ -1,4 +1,5 @@
 ﻿using MatrixUnitTestsHW;
+using NUnit.Framework;
 using System;
 using System.Numerics;
 
@@ -92,5 +93,37 @@ namespace Maths_Matrices.Tests
 
             return solMat;
         }
+
+        // Exercices 28 ----------------------------------------------------------------------------------------
+
+        public static Quaternion Euler(float x, float y, float z)
+        {
+            return Quaternion.AngleAxis(y, new Vector3(0, 1, 0)) *
+                   Quaternion.AngleAxis(x, new Vector3(1, 0, 0)) *
+                   Quaternion.AngleAxis(z, new Vector3(0, 0, 1));
+        }
+
+        public Vector3 EulerAngles { get
+            {
+                MatrixFloat rotMat = this.Matrix;
+
+                float sy = (float)Math.Sqrt(rotMat[0, 0] * rotMat[0, 0] + rotMat[1, 0] * rotMat[1, 0]);
+
+                float p = (float)Math.Asin(-rotMat[1, 2]) * (180f / (float)Math.PI);
+                float h = (float)Math.Atan2(rotMat[0, 2], rotMat[2, 2]) * (180f / (float)Math.PI);
+                float b = (float)Math.Atan2(rotMat[1, 0], rotMat[1, 1]) * (180f / (float)Math.PI);
+
+                if ((float)Math.Cos(p) == 0)
+                {
+
+                    p = (float)Math.Asin(-rotMat[1, 2]) * (180f / (float)Math.PI);
+                    h = (float)Math.Atan2(-rotMat[2, 0], rotMat[0, 0]) * (180f / (float)Math.PI);
+                    b = 0;
+
+                }
+                TestContext.WriteLine(p + "-" + h + "-" + b);
+                return new Vector3(p, h, b);
+            } 
+        }
     }
-}
+}   

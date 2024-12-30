@@ -96,7 +96,7 @@ namespace Maths_Matrices.Tests
         
         [Test]
         [DefaultFloatingPointTolerance(0.01d)]
-        public void TestQuaternionMatrixIdentity()
+          public void TestQuaternionMatrixIdentity()
         {
             //GlobalSettings.DefaultFloatingPointTolerance = 0.01d;
 
