@@ -121,7 +121,6 @@ namespace Maths_Matrices.Tests
                     b = 0;
 
                 }
-                TestContext.WriteLine(p + "-" + h + "-" + b);
                 return new Vector3(p, h, b);
             } 
         }

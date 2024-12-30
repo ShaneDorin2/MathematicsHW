@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using System;
 using System.Numerics;
+using static NUnit.Framework.Constraints.Tolerance;
 
 namespace Maths_Matrices.Tests
 {
@@ -168,6 +169,19 @@ namespace Maths_Matrices.Tests
         internal void SetParent(Transform tParent)
         {
             Parent = tParent;
+        }
+
+        // Exercices 29 ----------------------------------------------------------------------------------------
+
+        public Quaternion LocalRotationQuaternion { get
+            {
+                System.Numerics.Quaternion solQuat = System.Numerics.Quaternion.CreateFromYawPitchRoll(
+                    (float)(LocalRotation.Y * Math.PI / 180), 
+                    (float)(LocalRotation.X * Math.PI / 180), 
+                    (float)(LocalRotation.Z * Math.PI / 180)
+                    );
+                return new Quaternion(solQuat.X, solQuat.Y, solQuat.Z, solQuat.W);
+            }
         }
     }
 }
